@@ -1,0 +1,146 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Lab 5 | COMP1054 Web User Interface Design</title>
+	<style>
+		@import url(css/normalize.css);
+		body {
+			background: #CCC;
+		}
+		h1, h2, h3, h4, h5, h6, p {
+		/* Remove the top margin to get around an issue where margins
+		can escape from their containing div. The remaining bottom margin 
+		will hold it away from any elements that follow. */
+			margin-top: 0;
+		}
+		#container {
+			outline: 2px dotted red;
+			display: grid;
+			grid-template-areas:
+				"a a a a"
+			    "b b c c"
+			    "d e e f"
+			"g g g g";
+			grid-template-columns: 1fr 1fr 1fr 1fr;
+
+			grid-gap: 20px;
+			background: #FFF;
+			max-width: 1920px;
+			margin: 0 auto;
+
+		}
+
+		#header {
+			outline: 2px dotted blue;
+			grid-area: a;
+			background-color: #73a2e4;
+			padding: 20px;
+		}
+		#header h1 {
+		}
+		#sidebar1 {
+			outline: 2px dotted green;
+			grid-area: b;
+			background-color: #73a2e4;
+			padding: 20px;
+		}
+		#sidebar2 {
+			outline: 2px dotted purple;
+			grid-area: c;
+			background-color: #73a2e4;
+			padding: 20px;
+		}
+		#main {
+			outline: 2px dotted orange;
+			grid-area: d;
+			background-color: #73a2e4;
+			padding: 20px;
+		}
+		#sidebar3 {
+			outline: 2px dotted green;
+			grid-area: e;
+			background-color: #73a2e4;
+			padding: 20px;
+		}
+		#sidebar4 {
+			outline: 2px dotted purple;
+			grid-area: f;
+			background-color: #73a2e4;
+			padding: 20px;
+		}
+		#footer {
+			outline: 2px dotted yellow;
+			grid-area: g;
+			background-color: #73a2e4;
+			padding: 20px;
+		}
+		/* http://nicolasgallagher.com/micro-clearfix-hack/ */
+		/**
+		 * For modern browsers
+		 * 1. The space content is one way to avoid an Opera bug when the
+		 *    contenteditable attribute is included anywhere else in the document.
+		 *    Otherwise it causes space to appear at the top and bottom of elements
+		 *    that are clearfixed.
+		 * 2. The use of `table` rather than `block` is only necessary if using
+		 *    `:before` to contain the top-margins of child elements.
+		 */
+		.cf:before,
+		.cf:after {
+			content: " "; /* 1 */
+			display: table; /* 2 */
+		}
+		.cf:after {
+			clear: both;
+		}
+		/**
+		 * For IE 6/7 only
+		 * Include this rule to trigger hasLayout and contain floats.
+		 */
+		.cf {
+			*zoom: 1;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="container">
+		<header id="header" role="banner" >
+			<h1>Lab 5 Layout Challenge</h1>
+		</header>
+		<div id="sidebar1">
+			<h3>Sub-subheading</h3>
+			<nav role="navigation">
+				<ul>
+					<li><a href="#">Link one</a></li>
+					<li><a href="#">Link two</a></li>
+					<li><a href="#">Link three</a></li>
+					<li><a href="#">Link four</a></li>
+				</ul>
+			</nav>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vehicula, ipsum at placerat ultrices, lectus arcu cursus quam, vitae imperdiet tortor enim id erat. Duis ac sapien massa. Suspendisse potenti.</p>
+		</div><!-- #sidebar1 -->
+		<div id="sidebar2">
+			<h3>Sub-subheading</h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vehicula, ipsum at placerat ultrices, lectus arcu cursus quam, vitae imperdiet tortor enim id erat. Duis ac sapien massa. Suspendisse potenti. Quisque vehicula risus vitae justo congue imperdiet. Fusce egestas facilisis quam vitae feugiat.</p>
+		</div><!-- #sidebar2 -->
+		<div id="main" role="main">
+			<h2>Subheading</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vehicula, ipsum at placerat ultrices, lectus arcu cursus quam, vitae imperdiet tortor enim id erat. Duis ac sapien massa. Suspendisse potenti. Quisque vehicula risus vitae justo congue imperdiet. Fusce egestas facilisis quam vitae feugiat.</p>
+			<p>Sed eros magna, faucibus a ornare quis, faucibus nec lacus. Vivamus adipiscing pretium dolor, in eleifend eros euismod sit amet. Donec congue auctor ultricies. Duis eget faucibus felis. Cras mattis, magna sit amet condimentum molestie, magna mi elementum nulla, sit amet consequat erat neque sagittis arcu.</p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vehicula, ipsum at placerat ultrices, lectus arcu cursus quam, vitae imperdiet tortor enim id erat. Duis ac sapien massa. Suspendisse potenti. Quisque vehicula risus vitae justo congue imperdiet. Fusce egestas facilisis quam vitae feugiat.</p>
+		</div><!-- #main -->
+		<div id="sidebar3">
+			<h3>Sub-subheading</h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vehicula, ipsum at placerat ultrices, lectus arcu cursus quam, vitae imperdiet tortor enim id erat. Duis ac sapien massa. Suspendisse potenti.</p>
+		</div><!-- #sidebar3 -->
+		<div id="sidebar4">
+			<h3>Sub-subheading</h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vehicula, ipsum at placerat ultrices, lectus arcu cursus quam, vitae imperdiet tortor enim id erat. Duis ac sapien massa. Suspendisse potenti. Quisque vehicula risus vitae justo congue imperdiet. Fusce egestas facilisis quam vitae feugiat.</p>
+		</div><!-- #sidebar4 -->
+		<footer id="footer" role="contentinfo">
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vehicula, ipsum at placerat ultrices, lectus arcu cursus quam, vitae imperdiet tortor enim id erat.</p>
+		</footer>
+	</div><!-- #container -->
+</body>
+</html>
